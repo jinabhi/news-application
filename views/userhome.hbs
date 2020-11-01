@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    {{#if msg}}
+    <div class="alert alert-success alert-dismissible" style="width: 500px;"><a href="#" class="close"
+        data-dismiss="alert" aria-label="close">&times;</a> <strong>{{msg}}</strong> </div>
+    {{/if}}
+
+    {{!-- Create News Post Form --}}
+
+    <h3>Post News</h3>
+    <form class="form-horizontal" action="addnews" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="fn">Title:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="nt" name="ntitle">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="ln">Image:</label>
+        <div class="col-sm-3">
+          <input type="file" class="form-control" id="ib" name="imgbutton">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="desc">Description:</label>
+        <div class="col-sm-10">
+          <textarea rows="5" cols="60" name="descrip"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Post News" class="btn btn-default">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="button" class="btn btn-default">Close</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</body>
+
+</html>

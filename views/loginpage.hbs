@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <title>Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      {{#if msg}}
+      <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{msg}}</strong>
+      </div>
+      {{/if}}
+      <table>
+        <tr>
+          <td>
+            <h3> Login </h3>
+            <form action="/userlogin" method="post">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="uid" name="usid">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="pass">
+              </div>
+              <input type="submit" value='Login' class="btn btn-default" />
+            </form>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <h3> Create Account </h3>
+            <form action="/register" method="post">
+              <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" class="form-control" id="uid" name="em">
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="unm" name="uname">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="newpass">
+              </div>
+              <input type="submit" value='Register' class="btn btn-default" />
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

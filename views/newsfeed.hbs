@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    {{#if msg}}
+    <div class="alert alert-success alert-dismissible" style="width: 500px;"><a href="#" class="close"
+        data-dismiss="alert" aria-label="close">&times;</a> <strong>{{msg}}</strong> </div>
+    {{/if}}
+
+    <table class='table table-hover'>
+      {{#each data}}
+      <tr>
+        <td>
+          <center><strong>
+              <a href="viewpost?poid={{this.postId}}">
+                <h3>{{this.title}}</h3>
+              </a>
+            </strong></center>
+        </td>
+      </tr>
+      <tr>
+        <td>News By :- {{this.name}}</td>
+      </tr>
+      <tr>
+        <td>
+          <center><a href="viewpost?poid={{this.postId}}"><img src="/{{this.imageName}}" width="350" height="200"></a>
+          </center>
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+
+</body>
+
+</html>

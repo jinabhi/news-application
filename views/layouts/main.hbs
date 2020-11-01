@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="position: fixed; width:100%">
+    <a class="navbar-brand" href="#">News Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {{#if uid}}
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <strong><a class="nav-link disabled" style="color:white" href="#">Welcome </br>{{name}}</a></strong>
+        </li>
+      </ul>&nbsp;&nbsp;&nbsp;
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:white" href="userhome">Post News</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:white" href="myposts">View My Posted News</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:white" href="newsfeed">News Feed</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item active navbar-right">
+          <a class="nav-link" href="logout">Log Out <span class="glyphicon glyphicon-log-out"> </span></a>
+        </li>
+      </ul>
+      {{/if}}
+    </div>
+  </nav>
+
+  <div class="container" style="padding-top: 70px;">
+    {{{body}}}
+  </div>
+</body>
+
+</html>

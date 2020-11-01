@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    {{#if msg}}
+    <div class="alert alert-success alert-dismissible" style="width: 500px;"><a href="#" class="close"
+        data-dismiss="alert" aria-label="close">&times;</a> <strong>{{msg}}</strong> </div>
+    {{/if}}
+
+    <table class='table table-hover'>
+      {{#each data}}
+      <tr>
+        <td>
+          <center><strong>
+              <h3>{{this.title}}</h3>
+            </strong></center>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <center><img src="/{{this.imageName}}" width="700" height="400"></center>
+        </td>
+      </tr>
+      <tr>
+        <td>{{this.description}}</td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      {{/each}}
+      <tr>
+        <td><strong>Comments</strong></td>
+      </tr>
+      {{#each dataone}}
+      <tr>
+        <td>
+          <div style="color:blue;"><strong>{{this.cname}}</strong></div>: {{this.comment}}
+        </td>
+      </tr>
+      {{/each}}
+      <tr>
+        <td>
+          <form action="comment" method="POST">
+            {{#each data}}
+            <input type="hidden" value="{{this.postId}}" name="poId">
+            {{/each}}
+            <input type="text" name="commentbox" style="border-radius: 10px;" placeholder="Comment here" required="">
+            <input type="submit" value="Comment">
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+
+</html>
